@@ -6,6 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
 
     <style>
       body{
@@ -18,46 +22,63 @@
       .hover-items:hover{
         color: #5352ed;
       }
+      
+      .normal-font {
+        font-family: "Elms Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+      }
+      .bold-font{
+          font-family: "Momo Trust Display", sans-serif;
+          font-weight: 400;
+        }
+        
+      .fancy-font{
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+      }
+
     </style>
   </head>
   <body >
     
-  <div class="row d-flex gap-4 h-100 ms-3 my-2">
+  <div class="row d-flex gap-2 h-100 ms-3 my-2">
 
       <!-- for side bar -->
-      <header class="col-3 col-md-2 shadow contents rounded-4">
+      <header class="col col-md-2 shadow contents rounded-4 mx-3">
         <nav class="nav   rounded-4 d-flex flex-column  py-4">
            <div class="text-center">
             <a class="navbar-brand rounded-circle" href="#">
               <img src="./Assets/School-logo.jpg" alt="school " class="img-fluid rounded-circle  " width="40px" height="40px">
             </a>
 
-            <a class="navbar-brand text-bold" href="#" >Aims Int. School</a>
+            <a class="navbar-brand bold-font" href="#" >Aims Int. School</a>
            </div>
             <ul class="navbar-nav mx-auto my-2 my-lg-0 d-flex flex-column">
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-house"></i> Dashboard</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-house"></i> Dashboard</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-map"></i> Routes & Stops</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-map"></i> Routes & Stops</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-solid fa-bus"></i> Vechiels</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-solid fa-bus"></i> Vechiels</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-user"></i> Drivers</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-user"></i> Drivers</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-solid fa-route"></i> Trips</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-solid fa-route"></i> Trips</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-solid fa-bezier-curve"></i> Tracking</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-solid fa-bezier-curve"></i> Tracking</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-regular fa-file"></i> Reports</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-regular fa-file"></i> Reports</a>
                 </li>
                 <li class="nav-item hover-items">
-                <a class="nav-link active " aria-current="page" href="#"> <i class="fa-solid fa-gear"></i>Setting</a>
+                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-solid fa-gear"></i>Setting</a>
                 </li>
                
             </ul>
@@ -69,13 +90,13 @@
       <section class="col-8 col-md-9 ">
         <!-- Search section  -->
             <div class="row  contents shadow  rounded-4 py-4 px-4">
-              <div class="input-group w-50 rounded">
-                <input type="text" class="border-0 rounded"  placeholder="Search...">
-                <button class="btn btn-success  rounded">Search</button>
+              <div class="input-group w-50 ">
+                <input type="text" class="border-0 "  placeholder="Search...">
+                <button class="btn btn-success normal-font rounded-0">Search</button>
               </div>
-              <div class="w-50">
-                <button class="btn btn-primary "><i class="fa-jelly fa-regular fa-plus"></i> New Route</button>
-              <button class="btn btn-danger  "><i class="fa-jelly fa-regular fa-plus"></i> create Trip</button>
+              <div class="col">
+                <button class="btn btn-primary "><i class="fa-jelly fa-regular fa-plus normal-font"></i> New Route</button>
+              <button class="btn btn-danger normal-font "><i class="fa-jelly fa-regular fa-plus normal-font"></i> Create Trip</button>
                 </div>
             </div>
         <!-- Search section  -->
@@ -87,12 +108,12 @@
                 <div class="col-12 col-md-4 contents shadow  rounded-4 py-4 px-4  ">
                  <div class="row">
                   <div class="col ">
-                    <p class="h6">Today's Trip</p class="h6">
-                    <p>3</p>
+                    <p class="bold-font">Today's Trip</p class="h6">
+                    <p class="normal-font">3</p>
                   </div>
                   <div class="col">
-                    <p class="h6">Delayed</p class="h6">
-                    <p class="text-warning">1</p>
+                    <p class="bold-font">Delayed</p class="h6">
+                    <p class="text-warning normal-font">1</p>
                   </div>
                  </div>
                 </div>
@@ -101,12 +122,12 @@
                 <div class="col-12 col-md-4  contents shadow  rounded-4 py-4 px-4 ">
                   <div class="row">
                   <div class="col">
-                    <p class="h6">Student's on route</p class="h6">
+                    <p class="bold-font">Student's on route</p class="normal-font">
                     <p>100</p>
                   </div>
                   <div class="col">
-                    <p class="h6">Active vehicles</p class="h6">
-                    <p>1</p>
+                    <p class="bold-font">Active vehicles</p class="h6">
+                    <p class="normal-font">1</p>
                   </div>
                  </div>
                 </div>
@@ -114,12 +135,12 @@
                 <div class="col  contents shadow  rounded-4 py-4 px-4 ">
                   <div class="row">
                   <div class="col">
-                    <p class="h6">Incidents Today</p class="h6">
-                    <p>0</p>
+                    <p class="bold-font">Incidents Today</p class="h6">
+                    <p class="normal-font">0</p>
                   </div>
                   <div class="col">
-                    <p class="h6">Average on time</p class="h6">
-                    <p>90%</p>
+                    <p class="bold-font">Average on time</p class="h6">
+                    <p class="normal-font">90%</p>
                   </div>
                  </div>
                 </div>
@@ -143,40 +164,40 @@
                 </div>
                 <div class="col contents  rounded-4 py-4 px-4 ">
                     <div class=" bg-primary d-flex justify-content-between text-white rounded-2 mb-2 px-3 py-2">
-                      <span class="h5">Upcoming Trips</span>
-                      <span>Today 5 Trips</span>
+                      <span class="bold-font">Upcoming Trips</span>
+                      <span class="normal-font">Today 5 Trips</span>
                     </div>
                     
                     <div class=" bg-dark d-flex flex-row justify-content-between text-white rounded-2 my-2 p-2">
                       <div class="d-flex flex-column p-2">
-                        <span>Route A — Bungamati</span>
-                        <span>07:00 — Driver: Ram</span>
+                        <span class="normal-font">Route A — Bungamati</span>
+                        <span class="normal-font">07:00 — Driver: Ram</span>
                       </div>
                       <div class=" d-flex flex-column p-2">
                         <span class="text-success">Enroute</span>
-                        <span>ETA 07:08</span>
+                        <span class="normal-font">ETA 07:08</span>
                       </div>
                     </div>
 
                     <div class=" bg-dark d-flex flex-row justify-content-between text-white rounded-2 my-2 p-2">
                       <div class="d-flex flex-column p-2">
-                        <span>Route A — Ratnapark</span>
-                        <span>07:15 — Driver: Bikram</span>
+                        <span class="normal-font">Route A — Ratnapark</span>
+                        <span class="normal-font">07:15 — Driver: Bikram</span>
                       </div>
                       <div class=" d-flex flex-column p-2">
-                        <span class="text-warning">Pending</span>
-                        <span>Starts 07:15</span>
+                        <span class="text-warning normal-font">Pending</span>
+                        <span class="normal-font">Starts 07:15</span>
                       </div>
                     </div>
 
                     <div class=" bg-dark d-flex flex-row justify-content-between text-white rounded-2 my-2 p-2">
                       <div class="d-flex flex-column p-2">
-                        <span>Route A — Jawalakhel</span>
-                        <span>07:30 — Driver: Haram</span>
+                        <span class="normal-font">Route A — Jawalakhel</span>
+                        <span class="normal-font">07:30 — Driver: Haram</span>
                       </div>
                       <div class=" d-flex flex-column p-2">
-                        <span class="text-danger">Delayed</span>
-                        <span>+ 8 Min</span>
+                        <span class="text-danger normal-font">Delayed</span>
+                        <span class="normal-font">+ 8 Min</span>
                       </div>
                     </div>
                     
