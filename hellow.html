@@ -43,10 +43,10 @@
   </head>
   <body >
     
-  <div class="row d-flex gap-2 h-100 ms-3 my-2">
+  <div class="row d-flex gap-2 h-100 m-2">
 
       <!-- for side bar -->
-      <header class="col col-md-2 shadow contents rounded-4 mx-3">
+      <header class="col col-12 col-md-2 shadow contents rounded-4">
         <nav class="nav   rounded-4 d-flex flex-column  py-4">
            <div class="text-center">
             <a class="navbar-brand rounded-circle" href="#">
@@ -87,29 +87,21 @@
 
 
       <!-- for main contents  -->
-      <section class="col-8 col-md-9 ">
+      <section class="col-12 col-md-9 ">
         <!-- Search section  -->
-            <div class="row  contents shadow  rounded-4 py-4 px-4">
+            <div class=" d-flex justify-content-around contents shadow  rounded-4 py-4 px-4">
               <div class="input-group w-50 ">
                 <input type="text" class="border-0 "  placeholder="Search...">
                 <button class="btn btn-success normal-font rounded-0">Search</button>
               </div>
-              <div class="col">
+              <div>
                         <button class="btn btn-primary normal-font" 
                       data-bs-toggle="modal" 
                       data-bs-target="#routeModal">
                 <i class="fa-jelly fa-regular fa-plus"></i> New Route
               </button>
-                        <button class="btn btn-danger normal-font" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#tripModal">
-            <i class="fa-jelly fa-regular fa-plus"></i>  Create Trip</button>
-
-
-            
-                </div>
-
               </div>
+            </div>
 
               <!-- for create route  -->
               <div class="row">
