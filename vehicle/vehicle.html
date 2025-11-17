@@ -1,24 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicles</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>School Transportation — Add Vehicles UI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      body { background: #f8f9fa; }
+      .vehicle-photo {
+        width: 64px; height: 40px; object-fit: cover; border-radius: 6px;
+      }
+      .card-shadow { box-shadow: 0 6px 18px rgba(17,24,39,0.06); }
+      .small-muted { font-size: .85rem; color: #6c757d; }
+    </style>
+  </head>
+  <body>
 
-</head>
-<body>
-    <div class="main-container m-3">
-        <nav>
-            <a href="addVehicle.html">
-                <button class="btn btn-primary">Add Vehicle</button>
-            </a>
-        </nav>
-        <p class="mx-auto h2">Vehicle List</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="../index.html"><i class="bi bi-bus-front-fill"></i> School Transport</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item me-3"><a class="nav-link" href="#">Drivers</a></li>
+            <li class="nav-item"><a class="btn btn-outline-primary" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h3 class="mb-1">Transport Management</h3>
+          <div class="small-muted">Manage vehicles and routes for the school fleet</div>
+        </div>
+        <div>
+          <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addVehicleModal"><i class="bi bi-plus-lg"></i> Add Vehicle</button>
+          <div class="btn-group">
+            <button class="btn btn-outline-secondary">Export</button>
+            <button class="btn btn-outline-secondary">Import</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="card card-shadow">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0">Vehicle List</h5>
+                <div class="d-flex gap-2 align-items-center">
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control" placeholder="Search by plate, model, driver..." aria-label="Search">
+                  </div>
+                  <select class="form-select w-auto">
+                    <option selected>All Status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>Maintenance</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Vehicle</th>
+                      <th scope="col">Plate</th>
+                      <th scope="col">Capacity</th>
+                      <th scope="col">Driver</th>
+                      <th scope="col">Route</th>
+                      <th scope="col">Status</th>
+                      <th scope="col" class="text-end">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Example (static) rows -->
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="https://picsum.photos/seed/van1/200/120" alt="van" class="vehicle-photo">
+                          <div>
+                            <div class="fw-semibold">Toyota Coaster</div>
+                            <div class="small-muted">White — 2018</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>KA 05 PA 1234</td>
+                      <td>28</td>
+                      <td>Ramesh Thapa<br><small class="small-muted">+977-98XXXXXXXX</small></td>
+                      <td>Main Campus Loop</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                      <td class="text-end">
+                        <div class="btn-group" role="group">
+                          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="https://picsum.photos/seed/mini/200/120" alt="mini-bus" class="vehicle-photo">
+                          <div>
+                            <div class="fw-semibold">Maruti Omni</div>
+                            <div class="small-muted">Blue — 2014</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>KA 05 PB 2222</td>
+                      <td>8</td>
+                      <td>Sita Koirala<br><small class="small-muted">+977-98YYYYYYYY</small></td>
+                      <td>North Route</td>
+                      <td><span class="badge bg-warning text-dark">Maintenance</span></td>
+                      <td class="text-end">
+                        <div class="btn-group" role="group">
+                          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="small-muted">Showing 2 of 12 vehicles</div>
+                <nav>
+                  <ul class="pagination mb-0">
+                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                    <li class="page-item active"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card card-shadow mb-4">
+            <div class="card-body">
+              <h6 class="card-title">Fleet Summary</h6>
+              <div class="row text-center mt-3">
+                <div class="col-4">
+                  <div class="fw-bold">12</div>
+                  <div class="small-muted">Total</div>
+                </div>
+                <div class="col-4">
+                  <div class="fw-bold text-success">8</div>
+                  <div class="small-muted">Active</div>
+                </div>
+                <div class="col-4">
+                  <div class="fw-bold text-warning">2</div>
+                  <div class="small-muted">Maintenance</div>
+                </div>
+              </div>
+
+              <hr>
+              <h6 class="mb-2">Quick Actions</h6>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal"><i class="bi bi-plus-lg"></i> Add Vehicle</button>
+                <button class="btn btn-outline-secondary">Assign Driver</button>
+                <button class="btn btn-outline-secondary">Manage Routes</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-shadow">
+            <div class="card-body">
+              <h6 class="card-title">Recent Activity</h6>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-3">
+                  <div class="d-flex">
+                    <div class="me-3"><i class="bi bi-check-circle-fill text-success"></i></div>
+                    <div>
+                      <div class="fw-semibold">Vehicle KA 05 PA 1234 inspected</div>
+                      <div class="small-muted">2 days ago</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex">
+                    <div class="me-3"><i class="bi bi-tools text-warning"></i></div>
+                    <div>
+                      <div class="fw-semibold">Mini bus sent to service</div>
+                      <div class="small-muted">5 days ago</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Add Vehicle Modal (UI only) -->
+    <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addVehicleModalLabel"><i class="bi bi-plus-lg"></i> Add New Vehicle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Vehicle ID</label>
+                  <input type="text" class="form-control" placeholder="Auto / Manual ID">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Plate Number</label>
+                  <input type="text" class="form-control" placeholder="e.g. KA 05 PA 1234">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Make & Model</label>
+                  <input type="text" class="form-control" placeholder="e.g. Toyota Coaster">
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Year</label>
+                  <input type="number" class="form-control" placeholder="2018">
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Capacity</label>
+                  <input type="number" class="form-control" placeholder="No. of seats">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Driver Name</label>
+                  <input type="text" class="form-control" placeholder="Driver full name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Driver Contact</label>
+                  <input type="tel" class="form-control" placeholder="Phone number">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Assigned Route</label>
+                  <select class="form-select">
+                    <option selected>Choose route...</option>
+                    <option>Main Campus Loop</option>
+                    <option>North Route</option>
+                    <option>South Route</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <select class="form-select">
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+                    <option>Maintenance</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Notes</label>
+                  <textarea class="form-control" rows="3" placeholder="Any special notes (e.g. accessibility, fuel type)"></textarea>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Upload Photo</label>
+                  <input class="form-control" type="file" disabled>
+                  <div class="small-muted mt-1">Disabled — UI only</div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-column justify-content-end">
+                  <div class="small-muted">Form is UI-only. Submit will not persist data.</div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save Vehicle</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
