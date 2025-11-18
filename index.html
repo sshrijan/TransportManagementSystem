@@ -13,10 +13,10 @@
 
     <style>
       body{
-        background: #bdc3c7;
+        background: #ecf0f1;
       }
       .contents{
-        background: #ecf0f1;
+        background: #fff;
         color: #2c3e50;
       }
       .hover-items:hover{
@@ -48,83 +48,44 @@
       <!-- for side bar -->
       <header class="col col-12 col-md-2 shadow contents rounded-4">
         <nav class="nav   rounded-4 d-flex flex-column  py-4">
-           <div class="text-center">
+           <div class="text-center mb-3">
             <a class="navbar-brand rounded-circle" href="#">
               <img src="./Assets/School-logo.jpg" alt="school " class="img-fluid rounded-circle  " width="40px" height="40px">
             </a>
 
-            <a class="navbar-brand bold-font" href="#" >Aims Int. School</a>
+            <a class="navbar-brand bold-font text-success " href="#" >Aster Int. School</a>
            </div>
-            <ul class="navbar-nav mx-auto my-2 my-lg-0 d-flex flex-column">
-                <li class="nav-item hover-items">
-                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-house"></i> Dashboard</a>
+            <ul class="navbar-nav mx-auto my-2 my-lg-0 d-flex flex-column gap-1 ">
+                <li class="nav-item hover-items ">
+                <a class="nav-link active normal-font " aria-current="page" href="#" id="home"> <i class="fa-jelly fa-regular fa-house"></i> Dashboard</a>
                 </li>
-                <li class="nav-item hover-items">
-                <a class="nav-link active normal-font " aria-current="page" href="vehicle/vehicle.html"> <i class="fa-solid fa-bus"></i>Vehicles</a>
+                <li class="nav-item hover-items ">
+                <a class="nav-link active normal-font " aria-current="page" href="#vechiel-dash" id="vechiel-nav"> <i class="fa-solid fa-bus"></i>Vehicles</a>
                 </li>
-                <li class="nav-item hover-items">
-                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-user"></i> Drivers</a>
+                <li class="nav-item hover-items ">
+                <a class="nav-link active normal-font " aria-current="page" href="#driver-dash" id="driver"> <i class="fa-jelly fa-regular fa-user"></i> Drivers</a>
                 </li>
-                <li class="nav-item hover-items">
-                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-jelly fa-regular fa-map"></i>Incidents</a>
+                <li class="nav-item hover-items ">
+                <a class="nav-link active normal-font " aria-current="page" href="#incident-dash" id="incident"> <i class="fa-jelly fa-regular fa-map"></i>Incidents</a>
                 </li>
-                <li class="nav-item hover-items">
-                <a class="nav-link active normal-font " aria-current="page" href="#"> <i class="fa-solid fa-bezier-curve"></i>Assign Student's pickup route</a>
+                <li class="nav-item hover-items ">
+                <a class="nav-link active normal-font " aria-current="page" href="#assign-dash" id="assign_pickup"> <i class="fa-solid fa-bezier-curve"></i>Assign pickup</a>
                 </li>
                
             </ul>
         </nav>
       </header>
 
-
+<!-- --------------------------------------------------------------------------------------------------- -->
       <!-- for main contents  -->
-      <section class="col-12 col-md-9 ">
-              <!-- for create route  -->
-              <div class="row">
-                 <!-- Modal -->
-                <div class="modal fade" id="routeModal" tabindex="-1" aria-labelledby="routeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="routeModalLabel">Create Route</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        ...
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <section class="col-12 col-md-9 " id="main-dash">
 
-              </div>
 
-              <!-- for create Trip  -->
-              <div class="row">
-                 <!-- Modal -->
-                <div class="modal fade" id="tripModal" tabindex="-1" aria-labelledby="routeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="routeModalLabel">Create Your Trip</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        ...
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-        <!-- Search section  -->
+           <div class="row gap-2 my-3 contents rounded-2 py-4">
+            <div class="col-12">
+              <h2 class="bold-font text-center text-success"> Transport Management System</h2>
+            </div>
+           </div>
 
 
             <!-- status section  -->
@@ -230,8 +191,635 @@
 
       </section>
 
+<!-- --------------------------------------------------------------------------------------------------- -->
+      <!-- for vechiels -->
+      <div class="col-12 col-md-9 d-none" id="vechiel-dash">
+        
+        <div class="row  my-3 contents rounded-2 py-4 bordered-2">
+            <div class="col-12">
+              <h2 class="bold-font text-center text-success"> Transport Management System</h2>
+            </div>
+           </div>
+
+      <div class="row ">
+        <div class="col-12 col-md-9 ">
+          <div class="card card-shadow">
+            <div class="card-body contents ">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h5 class="card-title mb-0">Vehicle List</h5>
+                <div class="d-flex  align-items-center">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="Search by plate, model, driver..." aria-label="Search">
+                    <button class="input-group-text btn btn-primary"><i class="bi bi-search"></i> Search</button>
+                  </div>
+                  <select class="form-select w-auto">
+                    <option selected>All Status</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>Maintenance</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="table-responsive contents rounded-4">
+                <table class="table align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">S.N</th>
+                      <th scope="col">Vehicle</th>
+                      <th scope="col">Plate</th>
+                      <th scope="col">Capacity</th>
+                      <th scope="col">Driver</th>
+                      <th scope="col">Route</th>
+                      <th scope="col">Status</th>
+                      <th scope="col" class="text-end">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Example (static) rows -->
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="https://picsum.photos/seed/van1/200/120" alt="van" class="vehicle-photo">
+                          <div>
+                            <div class="fw-semibold">Toyota Coaster</div>
+                            <div class="small-muted">White — 2018</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>KA 05 PA 1234</td>
+                      <td>28</td>
+                      <td>Ramesh Thapa<br><small class="small-muted">+977-98XXXXXXXX</small></td>
+                      <td>Main Campus Loop</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                      <td class="text-end">
+                        <div class="btn-group" role="group">
+                          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="https://picsum.photos/seed/mini/200/120" alt="mini-bus" class="vehicle-photo">
+                          <div>
+                            <div class="fw-semibold">Maruti Omni</div>
+                            <div class="small-muted">Blue — 2014</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>KA 05 PB 2222</td>
+                      <td>8</td>
+                      <td>Sita Koirala<br><small class="small-muted">+977-98YYYYYYYY</small></td>
+                      <td>North Route</td>
+                      <td><span class="badge bg-warning text-dark">Maintenance</span></td>
+                      <td class="text-end">
+                        <div class="btn-group" role="group">
+                          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="small-muted">Showing 2 of 12 vehicles</div>
+                <nav>
+                  <ul class="pagination mb-0">
+                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                    <li class="page-item active"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col ">
+          <div class="card card-shadow mb-4">
+            <div class="card-body">
+              <h6 class="card-title">Fleet Summary</h6>
+              <div class="row text-center mt-3">
+                <div class="col-4">
+                  <div class="fw-bold">12</div>
+                  <div class="small-muted">Total</div>
+                </div>
+                <div class="col-4">
+                  <div class="fw-bold text-success">8</div>
+                  <div class="small-muted">Active</div>
+                </div>
+                <div class="col-4">
+                  <div class="fw-bold text-warning">2</div>
+                  <div class="small-muted">Maintenance</div>
+                </div>
+              </div>
+
+              <hr>
+              <h6 class="mb-2">Quick Actions</h6>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal"><i class="bi bi-plus-lg"></i> Add Vehicle</button>
+                <button class="btn btn-outline-secondary">Assign Driver</button>
+                <button class="btn btn-outline-secondary">Manage Routes</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-shadow">
+            <div class="card-body">
+              <h6 class="card-title">Recent Activity</h6>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-3">
+                  <div class="d-flex">
+                    <div class="me-3"><i class="bi bi-check-circle-fill text-success"></i></div>
+                    <div>
+                      <div class="fw-semibold">Vehicle KA 05 PA 1234 inspected</div>
+                      <div class="small-muted">2 days ago</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex">
+                    <div class="me-3"><i class="bi bi-tools text-warning"></i></div>
+                    <div>
+                      <div class="fw-semibold">Mini bus sent to service</div>
+                      <div class="small-muted">5 days ago</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    <!-- Add Vehicle Modal (UI only) -->
+    <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addVehicleModalLabel"><i class="bi bi-plus-lg"></i> Add New Vehicle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Vehicle ID</label>
+                  <input type="text" class="form-control" placeholder="Auto / Manual ID">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Plate Number</label>
+                  <input type="text" class="form-control" placeholder="e.g. KA 05 PA 1234">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Make & Model</label>
+                  <input type="text" class="form-control" placeholder="e.g. Toyota Coaster">
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Year</label>
+                  <input type="number" class="form-control" placeholder="2018">
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Capacity</label>
+                  <input type="number" class="form-control" placeholder="No. of seats">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Driver Name</label>
+                  <input type="text" class="form-control" placeholder="Driver full name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Driver Contact</label>
+                  <input type="tel" class="form-control" placeholder="Phone number">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Assigned Route</label>
+                  <select class="form-select">
+                    <option selected>Choose route...</option>
+                    <option>Main Campus Loop</option>
+                    <option>North Route</option>
+                    <option>South Route</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <select class="form-select">
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+                    <option>Maintenance</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Notes</label>
+                  <textarea class="form-control" rows="3" placeholder="Any special notes (e.g. accessibility, fuel type)"></textarea>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Upload Photo</label>
+                  <input class="form-control" type="file" disabled>
+                  <div class="small-muted mt-1">Disabled — UI only</div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-column justify-content-end">
+                  <div class="small-muted">Form is UI-only. Submit will not persist data.</div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save Vehicle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+
+
+
+<!-- ------------------------------------------------------------------------------------->
+         <!-- Driver Management Section -->
+<div class="col-12 col-md-9  d-none" id="driver-dash">
+    <div class="row  my-3 contents rounded-2 py-4 bordered-2">
+            <div class="col-12">
+              <h2 class="bold-font text-center text-success"> Transport Management System</h2>
+            </div>
+           </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Driver Management</h3>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDriverModal">
+            <i class="bi bi-plus-circle"></i> Add Driver
+        </button>
+    </div>
+
+    <!-- Driver Table -->
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>S.N</th>
+                    <th>Driver Name</th>
+                    <th>Phone</th>
+                    <th>License Number</th>
+                    <th>Status</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sachin Mali</td>
+                    <td>+977-9765273464</td>
+                    <td>DL-56987412</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-info text-white">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add Driver Modal -->
+<div class="modal fade" id="addDriverModal" tabindex="-1" aria-labelledby="addDriverModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDriverModalLabel">Add New Driver</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="addDriverForm">
+                    <div class="mb-3">
+                        <label class="form-label">Driver Name</label>
+                        <input type="text" class="form-control" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" placeholder="e.g. +1 555-123-4567" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">License Number</label>
+                        <input type="text" class="form-control" placeholder="Enter license number" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select class="form-select">
+                            <option selected>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Driver</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- driver sections -->
+
+
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+<!-- Incident Management Section -->
+<div class="col-12 col-md-9 d-none" id="incident-dash">
+    <div class="row  my-3 contents rounded-2 py-4 bordered-2">
+            <div class="col-12">
+              <h2 class="bold-font text-center text-success"> Transport Management System</h2>
+            </div>
+           </div>
+
+<div class="row py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Transport Incident Management</h3>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addIncidentModal">
+            <i class="bi bi-plus-circle"></i> Add Incident
+        </button>
+    </div>
+
+    <!-- Incident Table -->
+      <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Incident Title</th>
+                    <th>Vehicle</th>
+                    <th>Driver</th>
+                    <th>Date</th>
+                    <th>Severity</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Minor Collision</td>
+                    <td>Truck A12</td>
+                    <td>John Doe</td>
+                    <td>2025-01-18</td>
+                    <td><span class="badge bg-warning">Moderate</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-info text-white" title="View">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-warning" title="Edit">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" title="Delete">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add Incident Modal -->
+<div class="modal fade" id="addIncidentModal" tabindex="-1" aria-labelledby="addIncidentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="addIncidentModalLabel">Add New Incident</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="addIncidentForm">
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Incident Title</label>
+                            <input type="text" class="form-control" placeholder="e.g. Brake Failure" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle</label>
+                            <input type="text" class="form-control" placeholder="e.g. Bus B22" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Driver</label>
+                            <input type="text" class="form-control" placeholder="Driver Name" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">Severity</label>
+                            <select class="form-select">
+                                <option selected>Low</option>
+                                <option>Moderate</option>
+                                <option>High</option>
+                                <option>Critical</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" rows="4" placeholder="Describe the incident..." required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Incident</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- Assign Pickup Section -->
+<div class="col-12 col-md-9  d-none" id="assign_dash">
+    <div class="row  my-3 contents rounded-2 py-4 bordered-2">
+            <div class="col-12">
+              <h2 class="bold-font text-center text-success"> Transport Management System</h2>
+            </div>
+           </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Assign Customer Pickup</h3>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignPickupModal">
+            <i class="bi bi-plus-circle"></i> New Pickup Assignment
+        </button>
+    </div>
+
+    <!-- Pickup Assignment Table -->
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Customer Name</th>
+                    <th>Driver</th>
+                    <th>Vehicle</th>
+                    <th>Pickup Date</th>
+                    <th>Pickup Time</th>
+                    <th>Location</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Alice Smith</td>
+                    <td>John Doe</td>
+                    <td>Van V12</td>
+                    <td>2025-01-20</td>
+                    <td>10:00 AM</td>
+                    <td>Main Street, City Center</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-info text-white" title="View">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-warning" title="Edit">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" title="Delete">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<!-- Assign Pickup Modal -->
+<div class="modal fade" id="assignPickupModal" tabindex="-1" aria-labelledby="assignPickupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="assignPickupModalLabel">Assign Pickup</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="assignPickupForm">
+
+                    <div class="row g-3">
+
+                        <!-- Customer -->
+                        <div class="col-md-6">
+                            <label class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" placeholder="Enter customer name" required>
+                        </div>
+
+                        <!-- Driver -->
+                        <div class="col-md-6">
+                            <label class="form-label">Driver</label>
+                            <select class="form-select" required>
+                                <option selected disabled>Select driver</option>
+                                <option>John Doe</option>
+                                <option>Michael Lee</option>
+                                <option>Sandra White</option>
+                            </select>
+                        </div>
+
+                        <!-- Vehicle -->
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle</label>
+                            <select class="form-select" required>
+                                <option selected disabled>Select vehicle</option>
+                                <option>Van V12</option>
+                                <option>Bus B33</option>
+                                <option>Car C98</option>
+                            </select>
+                        </div>
+
+                        <!-- Pickup Date -->
+                        <div class="col-md-3">
+                            <label class="form-label">Pickup Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+
+                        <!-- Pickup Time -->
+                        <div class="col-md-3">
+                            <label class="form-label">Pickup Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+
+                        <!-- Pickup Location -->
+                        <div class="col-12">
+                            <label class="form-label">Pickup Location</label>
+                            <textarea class="form-control" rows="3" placeholder="Enter pickup address" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Assign Pickup</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
